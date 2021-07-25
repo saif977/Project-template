@@ -153,7 +153,7 @@ body {
     border: none;
     outline: none;
     cursor: pointer;
-    transition: transform 200ms ease-in-out; }linear-gradient(to right, #11998e, #38ef7d), url("../../img/card-pic-1.jpg")
+    transition: transform 200ms ease-in-out; }
     .btn--white-btn:hover {
       transform: translateY(-10%);
       box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.281); }
