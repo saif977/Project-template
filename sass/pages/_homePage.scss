@@ -1,0 +1,353 @@
+.sec-about{
+    background-color: $col-sec-about-background;
+    padding-bottom: 25rem;
+    padding-top: 17rem;
+    margin-top:-30vh;
+
+    &__grid-cnt{
+        display: grid;
+        grid-template-rows: repeat(1,1fr);
+        grid-template-columns: repeat(2,1fr);
+        padding:0 3rem;
+        padding-bottom: 3rem;
+
+        @include mediaqueryFor(tab-land){
+            grid-template-rows: repeat(2,auto-fit);
+            grid-template-columns: repeat(1,1fr);
+            padding-bottom: 0 5rem;
+        }
+
+        @include mediaqueryFor(phone-port){
+            padding:0 1.5rem;
+        }
+
+        .ut-margin-80{
+            @include mediaqueryFor(tab-land){
+                margin-bottom: 10px !important;
+            }
+
+        }
+
+        
+
+        
+
+        .col-1-of-2{
+            @include mediaqueryFor(tab-land){
+                margin-top: 2.5rem;
+                padding: 0 2rem;
+               
+            }
+        }
+    }
+
+}
+
+.sec-features{
+    padding: 14rem 0;
+    background-image: linear-gradient(to right,$col-sec-features-pink 10%,$col-sec-features-blue),url("../img/section-feature-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform:translateY(-29%) skewY(-10deg);
+
+    @include mediaqueryFor(tab-port){
+        transform: translateY(-20%) skewY(-10deg);
+    }
+
+
+    @include mediaqueryFor(phone-port){
+        transform: translateY(-18%) skewY(-10deg);
+    }
+
+    &>*{
+        transform: skewY(10deg);
+    }
+
+
+    &__grid-cnt{
+        max-width: 100%;
+        padding: 0 4rem;
+
+        display: grid;
+        grid-template-rows: repeat(auto-fit,1fr);
+        grid-template-columns: repeat(auto-fit,210px);
+        grid-column-gap: 3rem;
+
+        justify-content: center;
+
+        @include mediaqueryFor(laptop-small){
+            padding : 0 1rem;
+            grid-column-gap: 2rem;
+        }
+
+        @include mediaqueryFor(laptop-small-B){
+            grid-template-rows: repeat(2,1fr);
+            grid-template-columns: repeat(2,210px);
+            grid-row-gap: 6rem;
+            grid-column-gap:0;
+
+            justify-content: space-evenly;
+        }
+
+        @include mediaqueryFor(tab-port){
+            grid-template-columns: repeat(1,minmax(210px,300px));
+            grid-template-rows: repeat(4,1fr);
+            padding: 0 3rem;
+        }
+    }
+
+}
+
+
+.sec-packages{
+    padding: 8rem 0 12rem 0;
+    transform: translateY(-20%);
+    
+    padding-bottom: 7.5rem;
+
+     @include mediaqueryFor(tab-land){
+         padding-bottom: 0rem;
+     }
+
+    &__grid-cnt{
+        max-width: 100%;
+        padding: 0 4rem;
+
+        display: grid;
+        grid-template-rows: repeat(auto-fit,1fr);
+        grid-template-columns: repeat(3,minmax(auto,280px));
+        grid-column-gap: 3rem;
+
+        justify-content: center;
+
+        @include mediaqueryFor(tab-land){
+            grid-template-rows: repeat(3,1fr);
+            grid-template-columns: repeat(1,minmax(auto,600px));
+            grid-row-gap: 3rem;
+        }
+
+        @include mediaqueryFor(phone-port-small){
+            padding:0 2rem ;
+        }
+       
+      
+    }
+}
+
+.sec-review{
+    text-align: center;
+    padding:10rem 0;
+    transform: translateY(-20%);
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+
+    & .review-cnt{
+        margin:0 10rem;
+        margin-bottom: 2.5rem;
+        background-color: rgba(white,.65);
+        box-shadow: 0 1.5rem 3rem rgba(black,.2);
+        transform: skewX(-5deg);
+        padding: 2rem 3rem;
+        padding-left: 4.5rem;
+
+        @include mediaqueryFor(phone-port){
+            transform: skewX(0deg);
+            padding-left: 3rem;
+            margin: 0 auto;
+            width:90vw;
+        }
+    
+        &__img-cnt{
+            float: left;
+            width: 120px;
+            height: 120px;
+            position: relative;
+            overflow: hidden;
+            shape-outside: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            transform: translate(-1.6rem,4%) skewX(5deg);
+
+
+        @include mediaqueryFor(phone-port){
+            float:none;
+            margin:0 auto;
+            margin-bottom: 2rem;
+            transform: translate(0rem,0%) skewX(0deg);
+        }
+
+            &__photo{
+                width:100%;
+                height: 100%;
+                transition: all .3s ease-in-out;
+                transform: scale(1.1);
+                backface-visibility: hidden;
+            }
+
+            &__photo-name{
+                color: white;
+                text-transform: uppercase;
+                font-weight: 500;
+                text-align: center;
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,20%) ;
+                opacity: 0;
+                transition: all .3s ease-in-out;
+            }
+
+        }
+
+        &__text{
+            transform: skewX(5deg);
+
+            @include mediaqueryFor(phone-port){
+                transform: skewX(0deg);
+            }
+
+            .font-size-tab-land{
+                @include mediaqueryFor(tab-land){
+                    font-size: 1.15rem;
+                }
+            } 
+
+        }
+
+        &:hover .review-cnt__img-cnt__photo{
+            filter: blur(3px) brightness(75%);
+            transform: scale(1);
+        }
+
+        &:hover .review-cnt__img-cnt__photo-name{
+            transform: translate(-50%,-50%) ;
+            opacity: 1;
+        }
+    }
+
+    & .video-cnt{
+        position: absolute;
+        width: 100%;
+        height:100%;
+        top:0;
+        z-index: -1;
+        opacity: .25;
+
+        &__video{
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+        }
+    }
+   
+}
+
+.sec-booking{
+    padding:11rem 0;
+    background-image: linear-gradient(to right , $col-header-pink 10%,$col-sec-booking-blue);
+    margin-top: -15rem;
+    position: relative;
+    .form-bg-cnt{
+        height:30rem;
+        background-image: linear-gradient(110deg ,rgba(white,.80) 0% 50%,transparent 50% 100%),url("../../img/form-bg-2.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 0 1.5rem 3rem rgba(black,.2);
+
+        @include mediaqueryFor(tab-land){
+            background-image: linear-gradient(110deg ,rgba(white,.80) 0% 60%,transparent 50% 100%),url("../../img/form-bg-2.jpg");
+        }
+
+        @include mediaqueryFor(phone-land-B){
+            background-image: linear-gradient(110deg ,rgba(white,.80) 0% 100%,transparent 50% 100%),url("../../img/form-bg-2.jpg");
+        }
+
+        @include mediaqueryFor(tab-port){
+            height:32rem;
+        }
+    }
+
+}
+
+footer{
+    background-color: $col-bg-footer-dark;
+    color:white;
+    padding: 5rem 0rem;
+    font-size: .9rem;
+    
+    @include mediaqueryFor(tab-port){
+        font-size: 1rem;
+    }
+
+    .footer__logo__cnt{
+        width:100%;
+        text-align: center;
+        padding: 0rem 0rem 5rem 0rem;
+        
+
+        .footer__icon{
+            transform: scale(6);
+            
+                  
+        }
+    }
+
+   .footer__el-cnt{
+       @include clearFix;
+       list-style: none;
+       display: inline-block;
+       border-top: 1px solid white;
+       padding-top:1rem;
+        .footer__left-el , .footer__right-el{
+            float: left;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding: .3rem;
+
+            & span{
+                backface-visibility: hidden;
+                transition: all .3s ease-in-out;
+              
+            }
+
+            &:hover span{
+                display: inline-block;
+                color:$col-pink-dark;
+                transform: scale(1.1) rotate(5deg);
+                box-shadow: 0rem .5rem 1rem rgb(0, 0, 0);
+            }
+
+
+            &:not(:last-child){
+                margin-right:1rem;
+            }
+        }
+
+   }
+ 
+   .footer__el-cnt-right{
+    float: right;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+

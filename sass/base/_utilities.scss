@@ -1,0 +1,77 @@
+.ut-center{
+    text-align: center !important;
+}
+
+.ut-margin-80-responsive{
+    @include mediaqueryFor(tab-land-min-width){
+        margin-bottom: 80px !important;
+    }
+
+}
+
+.ut-margin-80{
+           margin-bottom: 80px !important;
+}
+
+.ut-margin-top-50{
+    margin-top: -50px !important;
+}
+
+.ut-margin-top-6{
+    margin-top: 6rem !important;
+}
+
+.ut-col-ht{
+    height: 25rem !important;
+    @include mediaqueryFor(phone-port-small){
+        height: auto !important;
+    }
+}
+
+
+.ut-btn-mod{
+    font-size: 1rem !important;
+    color:rgba(53, 53, 53, 0.89) !important;
+    font-weight: 400 !important;
+
+    @include mediaqueryFor(phone-port-small){
+        font-size: 1.1rem !important ;
+    }
+
+}
+
+.ut-font-size-small{
+    font-size: 1rem !important;    
+}
+
+.ut-center{
+    text-align: center !important;
+}
+
+.ut-fontSize-med{
+    font-size: 1.7rem !important;
+}
+
+.ut-padding-top-60{
+    padding-top:4rem !important;
+} 
+
+.ut-margin-bottom-20{
+    margin-bottom:2rem !important;
+}
+
+.ut-z-index-2{
+    z-index:2 !important;
+  
+}
+
+.ut-footer{
+    padding:0 1rem ;
+    margin-left: 0 !important;
+    margin-right: 0px !important;
+    max-width: 100% !important;
+}
+
+.ut-padding-right-col-1{
+    padding-right: 3rem;
+}

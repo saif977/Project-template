@@ -1,0 +1,170 @@
+.form-cnt{
+    width:50%;
+    height:100%;
+
+    @include mediaqueryFor(tab-land){
+        width:60%;
+    }
+
+    @include mediaqueryFor(phone-land-B){
+        width: 100%;
+        padding: 0 10rem;
+    }
+
+    @include mediaqueryFor(phone-port){
+        padding: 0 8rem ;
+    }
+
+    @include mediaqueryFor(phone-port){
+        padding: 0 6rem ;
+    }
+
+    @include mediaqueryFor(phone-port-small){
+        padding: 0 3rem ;
+    }
+
+    @include mediaqueryFor(phone-port-small-B){
+        padding: 0 1rem ;
+    }
+
+
+    & .form{
+
+        &__inp-cnt{
+            padding-left: 3rem;
+            text-transform: capitalize;
+
+            @include mediaqueryFor(phone-land-B){
+                padding-left: 0;
+            }
+
+            .input{
+                text-transform: inherit;
+                width:75%;
+                padding: 1rem;
+                border:none;
+                border-radius: 2px;
+                display: block;
+                font-size: 1rem; 
+                border-bottom:2px solid transparent;
+                transition:all .2s ease-in-out;
+
+                @include mediaqueryFor(tab-land){
+                    font-size: 1.1rem;
+                }
+
+                @include mediaqueryFor(phone-land-B){
+                    width: 100%;
+                }
+
+                &:focus{
+                    outline: none;
+                    box-shadow:0 1rem 2rem rgba(black,.1);
+                    border-bottom:2px solid orangered;
+                }
+
+                 &:focus:valid{
+                    border-bottom:2px solid $col-header-pink;
+                }
+
+              
+
+            }
+
+            .inp-cnt__label{
+                    text-transform: inherit;
+                    padding-left: 1rem;
+                    display: inline-block;
+                    color:#5a5a5a;
+                    opacity:1;
+                    transform:translateY(0);
+                    transition: all .3s ease-in-out;
+
+                   
+
+                }
+
+            &:not(:last-child){
+                margin-bottom:1rem;
+            }
+
+           .input:placeholder-shown + .inp-cnt__label{
+                opacity:0;
+                transform:translateY(-50%);
+            }
+
+            @include mediaqueryFor(tab-land){
+                font-size: 1.1rem;
+            }
+        }
+
+        &__inp-radio-cnt{
+            @include mediaqueryFor(phone-land-B){
+                text-align: center;
+                padding-left: 0;
+            }
+        }
+
+        
+
+        .radio-cnt{
+            display:inline-block;
+            position: relative;
+            padding: .5rem 0;
+
+            &:not(:last-child){
+                margin-right: 3rem;
+            }
+
+            .inp-radio-button{
+                display: none;
+            }
+
+            .inp-radio-label{
+                padding-left:2rem;
+                position: relative;
+
+                .fake-radio-cnt{
+                    padding:.5rem;
+                    border: 4px solid $col-header-pink;
+                    border-radius:50%;
+                    position: absolute;
+                    left:0;
+                    transform: translateY(-10%);;
+
+                    &::after{
+                        content: "";
+                        width:50%;
+                        height:50%;
+                        background-color: $col-header-pink;
+                        border-radius:50%;
+                        position: absolute;
+                        top:50%;
+                        left:50%;
+                        transform: translate(-50%,-50%);
+                        opacity: 0;
+                    }
+                }
+            }
+
+            .inp-radio-button:checked + .inp-radio-label > .fake-radio-cnt::after{
+                opacity: 1;
+            }
+        }
+
+        .btn{
+            margin-top:2.5rem;
+            padding-left: 8rem;
+
+            @include mediaqueryFor(phone-land-B){
+                text-align: center;
+                padding-left: 0;
+            }
+
+        }
+    }
+
+   
+ 
+
+}

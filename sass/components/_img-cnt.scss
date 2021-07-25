@@ -1,0 +1,134 @@
+.img-cnt{
+    position: relative;
+
+    &__image{
+        position: absolute;
+        width: 55%;
+        box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.397);
+        outline-offset: .5rem; 
+        transition: all .2s ease-in-out;
+        @include mediaqueryFor(tab-port-min-width){
+
+            &:hover{
+                z-index: 10;
+                transform: scale(1.05) translateY(-1rem);
+                outline: 10px solid $col-header-pink;
+                -moz-outline-radius: 3px;
+                box-shadow: 4px 8px 4rem rgba(0, 0, 0, 0.678);
+            }
+        }
+
+        @include mediaqueryFor(tab-land){
+            position: relative;
+            width: 100%;
+        }
+
+        @include mediaqueryFor(tab-port){
+            transform: scale(1.05) translateY(-1rem);
+            outline: 10px solid $col-header-pink;
+            -moz-outline-radius: 3px;
+            box-shadow: 4px 8px 4rem rgba(0, 0, 0, 0.678);
+            outline-offset: 1rem; 
+        }
+
+    }
+
+    @include mediaqueryFor(tab-land){
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(1,1fr);
+        height:100%;
+        padding-top:2rem ;
+    }
+
+    @include mediaqueryFor(tab-port){
+        padding:4rem;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(3,auto-fit);
+        grid-row-gap: 5rem;
+    }
+
+    
+    &--p1{
+        @include mediaqueryFor(tab-land-min-width){
+
+            top:6rem;
+            left: 25%;
+            z-index:1;
+        }
+
+        @include mediaqueryFor(tab-land){
+            transform: scale(.9);
+        }
+
+        @include mediaqueryFor(tab-port){
+            transform: scale(1);
+        }
+    }
+
+    &--p2{
+        @include mediaqueryFor(tab-land-min-width){
+
+            left: 44%;
+            top:2rem;
+        }
+
+        @include mediaqueryFor(tab-land){
+            transform: scale(1.4);
+            z-index: 1;
+        }
+
+        
+
+        // @include mediaqueryFor(tab-land){
+        //     &:hover{
+        //         z-index: 10;
+        //         transform: scale(1.5) translateY(-1rem);
+        //         outline: 10px solid $col-header-pink;
+        //         -moz-outline-radius: 3px;
+        //         box-shadow: 4px 8px 4rem rgba(0, 0, 0, 0.678);
+        //     }
+            
+        // }
+
+        @include mediaqueryFor2(tab-land,tab-port-min-width){
+            &:hover{
+                z-index: 10;
+                transform: scale(1.5) translateY(-1rem);
+                outline: 10px solid $col-header-pink;
+                -moz-outline-radius: 3px;
+                box-shadow: 4px 8px 4rem rgba(0, 0, 0, 0.678);
+            }
+        }
+
+
+        @include mediaqueryFor(tab-port){
+            transform: scale(1);
+        }
+    }
+
+    &--p3{
+        @include mediaqueryFor(tab-land-min-width){
+   
+            left: 2%;
+            top:-1.5rem;
+        }
+
+        @include mediaqueryFor(tab-port){
+            transform: scale(1);
+        }
+    }
+    
+    @include mediaqueryFor(tab-land-min-width){
+        &:hover :not(:hover){
+            transform: scale(0.9);
+        }
+    }
+
+    @include mediaqueryFor(phone-port){
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+
+
+}

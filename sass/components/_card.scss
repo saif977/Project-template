@@ -1,0 +1,253 @@
+.card{
+    perspective: 140rem;
+    height:25rem;
+    position: relative;
+    
+    &__side{
+        position: absolute;
+        top:0;
+        left: 0;
+        border-radius: 6px;
+        box-shadow: 0rem 1.5rem 4rem rgba(0, 0, 0, 0.295);
+        transition: all .7s ease-in-out;
+        backface-visibility: hidden;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+
+        &--front{
+            .card-front{
+                &__pic{
+                    padding-left: 2rem;
+                    height:12rem;
+                    background-position: center;
+                    background-size: cover;
+                    background-blend-mode: screen;
+                    
+                    &-1{
+                        background-image: linear-gradient(to right , $col-green-dark,$col-green-light),url("../../img/card-pic-1.jpg");
+                    }
+    
+                    &-2{
+                        background-image: linear-gradient(to right , $col-pink-dark,$col-pink-light),url("../../img/card-pic-2.jpg");
+                    }
+    
+                    &-3{
+                        background-image: linear-gradient(to right , $col-blue-dark,$col-blue-light),url("../../img/card-pic-3.jpg");
+                    }
+                }
+
+                &__para{
+                    color:white;
+                    font-size: 1.5rem;
+                    text-align: center;
+                    width: 100%;
+                    padding: .5rem .5rem;
+                    text-transform: uppercase;
+                    transform:translateY(-100%);
+                    backface-visibility: hidden;
+                   
+                    &-1{
+                        background-image: linear-gradient(to right bottom ,rgba($col-green-dark,.5),rgba($col-green-light,.8s));
+                    }
+
+                    &-2{
+                        background-image: linear-gradient(to right bottom ,rgba($col-pink-dark,.5),rgba($col-pink-light,.8));
+                    }
+
+                    &-3{
+                        background-image: linear-gradient(to right bottom ,rgba($col-blue-dark,.5),rgba($col-blue-light,.8));
+                    }
+
+                }
+
+                &__details{
+                      backface-visibility: hidden;
+                    ul{
+                       list-style: none; 
+                    }
+
+                    li{
+                        font-size: 1rem;
+                        margin-bottom: 2.5rem;
+
+                        @include mediaqueryFor(tab-port){
+                            font-size: 1.1rem;
+                        }
+                        
+                        display: inline-block;
+                        span{
+                            color: black;
+                            background-color: rgb(255, 255, 255);
+                            font-weight: 300;
+                            margin-left: 1.1rem;
+                            padding:.5rem .5rem .5rem .5rem ;
+                            border-top-right-radius: 6px;
+                            border-bottom-right-radius:6px;
+                            box-shadow: 4px 5px 15px rgba(54, 54, 54, 0.233);
+                        }
+                       
+                    }
+
+                    &-1{
+                        span{ border-left: 2px solid rgba($col-green-light,1);}
+                    }
+
+                    &-2{
+                        span{border-left: 2px solid rgba($col-pink-dark,.8);}
+                    }
+
+                    &-3{
+                        span{border-left: 2px solid rgba($col-blue-light,.8);}
+                    }
+
+
+                }
+                
+
+            }
+
+                
+        }
+
+        &--back{
+            transform:rotateY(180deg);
+            
+            .card__detail-container{
+                position: absolute;
+                left:50%;
+                top:50%;
+                text-align:center;
+                transform:translate(-50%,-50%);
+                backface-visibility: hidden;
+                .card__price{
+                    margin-bottom: 4rem;
+                    font-weight:300;
+                    color:white;
+
+                    &-text{
+                        font-size: 1.2rem;
+                        font-weight: 400;
+                        margin-bottom: 1rem;
+                    }
+
+                    &-value{
+                        font-size: 3rem;
+                    }
+
+                }
+
+                .btn{
+                    
+                    font-weight: 200;
+                    font-size: .5rem;
+                }
+            }
+        }
+
+       
+        
+
+        &--back--1{
+            background-image: linear-gradient(to right bottom , $col-green-dark,$col-green-light);
+        }
+
+        &--back--2{
+            background-image: linear-gradient(to right bottom , $col-pink-dark,$col-pink-light);
+        }
+
+        &--back--3{
+            background-image: linear-gradient(to right bottom , $col-blue-dark,$col-blue-light);
+        }
+    }
+
+    @include mediaqueryFor(tab-land-min-width){
+        &:hover &__side--front{
+            transform: rotateY(-180deg);
+        }
+    
+        &:hover &__side--back{
+            transform: rotateY(0deg);
+        }
+    }
+
+
+}
+
+.card{
+    @include mediaqueryFor(tab-land){
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 2fr 1fr;
+        border-radius: 6px;
+        box-shadow: 0rem 1.5rem 5rem rgba(0, 0, 0, 0.095);
+    }
+
+    @include mediaqueryFor(phone-port-small){
+        display: block;
+        height: auto;
+    }
+
+    &__side{
+        @include mediaqueryFor(tab-land){
+            position: relative;
+            box-shadow: 0;
+        }
+
+    }
+    &__side--front{
+        @include mediaqueryFor(tab-land){
+            border-top-right-radius:0px;
+            border-bottom-right-radius:0px;
+        }
+
+        @include mediaqueryFor(phone-port-small){
+            border-radius: 6px 6px 0px 0px;
+        }
+
+
+    }
+
+    &__side--back{
+        @include mediaqueryFor(tab-land){
+            display: block;
+            transform:rotateY(0deg);
+            border-top-left-radius:0px;
+            border-bottom-left-radius:0px;
+        }
+
+        @include mediaqueryFor(phone-port-small){
+            height: 8rem;
+            border-top-left-radius:0px;
+            border-top-right-radius:0px;
+            border-bottom-left-radius: 6px;
+        }
+
+        .card__detail-container{
+            @include mediaqueryFor(phone-port-small){
+                display: flex;
+                align-items: center;
+            }
+
+            .card__price{
+                @include mediaqueryFor(phone-port-small){
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 0;
+                    padding-right: 1rem;
+                }
+
+                & > *{
+                    @include mediaqueryFor(phone-port-small){
+                        margin-bottom: 0;
+                        padding-right: 1rem;
+                    }
+                }
+
+            }
+
+        }
+
+
+    }
+}

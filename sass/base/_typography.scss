@@ -1,0 +1,88 @@
+
+.heading--main-text{
+    display: block;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    font-weight: bold;
+    opacity: 0;
+
+    animation-name: moveFromLeft;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+        @include mediaqueryFor(phone-land-B){
+            line-height: 6.5rem;
+        }
+}
+
+.heading--primary-text{
+    display: block;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    font-weight: 300;
+    opacity: 0;
+
+    animation-name: moveFromRight;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+   
+        @include mediaqueryFor(phone-land-B){
+            line-height: 2rem;
+        }
+    
+}
+
+.secondary-header{
+    color: transparent;
+    font-size: 2rem;
+    font-family: lato;
+    background-image: linear-gradient(to right,$col-header-pink 10%,$col-header-blue);
+    -webkit-background-clip: text;
+    display: inline-block; 
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+    
+    &:hover{
+        transform:skew(15deg,5deg) scale(1.1);
+        text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.205);
+    }
+
+    @include mediaqueryFor(tab-port){
+        padding: 0 .5rem;
+        font-size: 1.75rem;
+        padding-top: 2rem;
+    }
+}
+
+.tertiary-heading{
+    margin-bottom: .8rem;
+    font-size:1.19rem;
+    color:rgb(112, 112, 112);
+    text-transform: uppercase;
+}
+
+.paragraph{
+    color:rgb(92, 92, 92);
+    line-height: 1.8rem;
+    font-size: 1rem;
+    &:not(:last-child){
+        margin-bottom: 1rem;
+    }
+
+    @include mediaqueryFor(tab-port){
+        font-size: 1.15rem;
+    }
+    
+}
